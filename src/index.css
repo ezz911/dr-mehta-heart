@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+          --background: 0 0% 100%;
+          --foreground: 250 60% 10%;
+          --frost: 252 100% 98%;
+          --lavender: 256 95% 94%;
+          --primary: 261 84% 46%;
+          --primary-foreground: 0 0% 100%;
+          --primary-glow: 263 69% 58%;
+          --primary-deep: 261 82% 34%;
+          --midnight: 251 60% 16%;
+          --midnight-foreground: 252 100% 98%;
+          --vitality: 161 70% 37%;
+          --vitality-foreground: 0 0% 100%;
+          --alert: 1 73% 59%;
+          --alert-foreground: 0 0% 100%;
+          --card: 0 0% 100%;
+          --card-foreground: 250 60% 10%;
+          --secondary: 252 100% 98%;
+          --secondary-foreground: 251 60% 16%;
+          --muted: 256 95% 96%;
+          --muted-foreground: 251 18% 42%;
+          --accent: 256 95% 94%;
+          --accent-foreground: 261 82% 34%;
+          --border: 256 60% 92%;
+          --input: 256 60% 92%;
+          --ring: 261 84% 46%;
+          --radius: 0.5rem;
+          --gradient-soft: linear-gradient(160deg, hsl(252 100% 98%) 0%, hsl(256 95% 94%) 100%);
+          --shadow-elegant: 0 4px 24px -4px hsl(261 84% 46% / 0.18);
+          --shadow-card: 0 2px 16px -2px hsl(250 60% 10% / 0.10);
+          --transition-smooth: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    body { @apply bg-background text-foreground font-sans antialiased; }
+    h1,h2,h3,h4,h5,h6 { @apply font-serif; }
+}
+
+@layer utilities {
+    .font-serif { font-family: 'Cardo', 'Times New Roman', serif; }
+    .font-sans { font-family: 'Inter', system-ui, sans-serif; }
+    .text-balance { text-wrap: balance; }
+    .bg-gradient-soft { background: var(--gradient-soft); }
+    .bg-frost { background-color: hsl(var(--frost)); }
+    .bg-lavender { background-color: hsl(var(--lavender)); }
+    .bg-midnight { background-color: hsl(var(--midnight)); }
+    .bg-vitality { background-color: hsl(var(--vitality)); }
+    .bg-alert { background-color: hsl(var(--alert)); }
+    .text-midnight-foreground { color: hsl(var(--midnight-foreground)); }
+    .text-primary-glow { color: hsl(var(--primary-glow)); }
+    .text-primary-deep { color: hsl(var(--primary-deep)); }
+    .text-vitality { color: hsl(var(--vitality)); }
+    .text-alert { color: hsl(var(--alert)); }
+    .border-alert { border-color: hsl(var(--alert)); }
+    .border-border { border-color: hsl(var(--border)); }
+    .shadow-elegant { box-shadow: var(--shadow-elegant); }
+    .shadow-card-soft { box-shadow: var(--shadow-card); }
+    .transition-smooth { transition: var(--transition-smooth); }
+    .text-display { font-size: clamp(2.75rem, 5.5vw, 4rem); line-height: 1.05; letter-spacing: -0.02em; }
+    .text-h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.015em; }
+    .text-h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.2; }
+    .text-h4 { font-size: 1.375rem; line-height: 1.35; }
+    .animate-fade-up { animation: fade-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) both; }
+    .animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
+    @keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+}
